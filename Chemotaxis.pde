@@ -40,15 +40,16 @@ void draw() {
      noLoop();
      
      //for loop will find the pixl that covers the screen the most
-     for (int i = 0; i < pixls.length; i++){
-        boolean isMost = bacteriaCounting(pixls[i].colorR, pixls[i].colorG, pixls[i].colorB);
-   
-        if (isMost){
-          bestPixl = i;
-        }
-     }
+     if (totalNumPixls < 50) {
+       for (int i = 0; i < pixls.length; i++){
+          boolean isMost = bacteriaCounting(pixls[i].colorR, pixls[i].colorG, pixls[i].colorB);
      
-     endScreen();
+          if (isMost){
+            bestPixl = i;
+          }
+       }
+       endScreen();
+     }
    }
  }  
  
